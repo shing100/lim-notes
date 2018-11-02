@@ -35,6 +35,11 @@ const Subtitle = styled.h2`
   font-weight: 400;
 `;
 
+const Notes = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+`;
 
 const Note = styled.div`
   padding: 10px;
@@ -48,7 +53,13 @@ const Note = styled.div`
   }
 `;
 
-export default class Notes extends React.Component {
+const NoteTitle = styled.span`
+  padding-bottom: 5px;
+  font-weight: 600;
+  font-size: 20px;
+`;
+
+export default class NotesContainer extends React.Component {
     render() {
       return (
       <>
@@ -63,17 +74,19 @@ export default class Notes extends React.Component {
           </Title>
           <Subtitle>Taking notes while we learn.</Subtitle>
         </Header>
+        <Notes>
         <Query query={GET_NOTES}>
           {({ data }) =>
             data.notes
               ? data.notes.map(note => (
-                  <Link to={`/edit/${note.id}`} key={note.id}>
-                    <Note>{note.title}</Note>
+                  <Link to={`/note/${note.id}`} key={note.id}>
+                    <Note><NoteTitle>{note.title}</NoteTitle></Note>
                   </Link>
                 ))
               : null
           }
         </Query>
+        </Notes>
       </>
     );
     }

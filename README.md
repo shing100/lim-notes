@@ -12,6 +12,10 @@ yarn add apollo-cache-inmemory apollo-client apollo-link graphql react-apollo st
 
 > https://www.styled-components.com/docs/basics#getting-started
 
+### markdown render
+
+> yarn add react-markdown-renderer
+
 
 ## Prerequisites
 
