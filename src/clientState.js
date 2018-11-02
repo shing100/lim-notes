@@ -6,7 +6,7 @@ export const defaults = {
         __typename: "Note",
         id: 1,
         title: "First",
-        contnet: "Second"
+        content: "Second"
     }]
 };
 export const typeDefs = [

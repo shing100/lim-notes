@@ -2,7 +2,7 @@ import gql from "graphql-tag";
 
 export const GET_NOTES = gql`
     {
-        notes@client{
+        notes @client{
             id
             title
             content
