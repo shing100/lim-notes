@@ -45,8 +45,8 @@ export const resolvers = {
         }
     },
     Mutation: {
-        createNote: {_, variables, { cache } } => {
-            const noteQuery = cache.readQuery({ query: GET_NOTES });
+        createNote: (_, variables, { cache } ) => {
+            const {notes} = cache.readQuery({ query: GET_NOTES });
             const { title, content } = variables;
             const newNote = {
                 __typename: "Note",
